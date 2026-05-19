@@ -1,0 +1,361 @@
+/* ==========================================================
+   Buscador de Recursos - CSS 
+   ========================================================== */
+
+/* Contenedor principal del buscador */
+.buscador-recursos {
+    background-color: #DDD0DF;
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+/* Campo de búsqueda de texto */
+.buscador-texto {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.buscador-texto input[type="text"] {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #fff;
+    border: 1px solid #3D3073;
+    border-radius: 40px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 12px;
+}
+
+.buscador-texto input[type="text"]::placeholder {
+    color: #999;
+}
+
+/* Contenedor de los 4 selectores */
+.buscador-filtros {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cada filtro individual */
+.filtro-item {
+    position: relative;
+}
+
+/* Botón que muestra el título del filtro */
+.filtro-toggle {
+    padding: 10px 16px;
+    background-color: #D9D9D9;
+    border: 2px solid #3D3073;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.filtro-toggle:hover {
+    background-color: #CCC0CF;
+}
+
+.filtro-toggle .arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+.filtro-toggle.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Desplegable con las opciones */
+.filtro-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background-color: #fff;
+    border: 1px solid #3D3073;
+    border-radius: 18px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-dropdown.active {
+    display: block;
+}
+
+.filtro-dropdown label {
+    display: block;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.85rem;
+    color: #333;
+    text-align: left;
+}
+
+.filtro-dropdown label:hover {
+    background-color: #F6EBF8;
+}
+
+.filtro-dropdown input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Ocultar select nativo */
+.filtro-item select {
+    display: none;
+}
+
+/* Botones de acción */
+.buscador-botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    position: relative;
+}
+
+.btn-buscar,
+.btn-limpiar {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+    font-family: "Inter", sans-serif;
+}
+
+.btn-buscar {
+    background-color: #3D3073;
+    color: #fff;
+    border: 2px solid #3D3073;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-buscar:hover {
+    background-color: #F6EBF8;
+    color: #3D3073;
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 4px 15px rgba(61, 48, 115, 0.3);
+}
+
+.btn-buscar:active {
+    transform: translateX(-50%) scale(0.98);
+}
+
+.btn-limpiar {
+    background-color: #E74C3C;
+    color: #fff;
+    border: 2px solid #E74C3C;
+}
+
+.btn-limpiar:hover {
+    background-color: #C0392B;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.btn-limpiar:active {
+    transform: scale(0.98);
+}
+
+/* =========================== */
+/* Responsive */
+/* =========================== */
+
+@media (max-width: 768px) {
+    .buscador-recursos {
+        padding: 20px;
+    }
+
+    .buscador-filtros {
+        flex-direction: column;
+    }
+
+    .buscador-botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-buscar {
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+
+    .btn-buscar:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-buscar:active {
+        transform: scale(0.98);
+    }
+
+    .btn-limpiar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .buscador-recursos {
+        padding: 15px;
+    }
+
+    .buscador-texto input[type="text"] {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .filtro-item label {
+        font-size: 0.8rem;
+    }
+
+    .filtro-item select {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .btn-buscar,
+    .btn-limpiar {
+        font-size: 0.9rem;
+        padding: 9px 16px;
+    }
+}
+
+
+/* --- Estilos para chips de filtros seleccionados (moved from template) --- */
+/* Chips de filtros seleccionados: mostrar cruz en hover y cambio a rojo */
+.selected-chip{position:relative;border-radius:999px;padding:3px 28px 3px 6px;background:#fff;border:1px solid rgba(0,0,0,0.08);color:#333;cursor:pointer;white-space:nowrap;line-height:1}
+.selected-chip:hover{border-color:#d64545;color:#d64545;background:#fff}
+.selected-chip:hover::after{color:#d64545;transform:translateY(-50%) scale(1.05)}
+
+
+/* ==========================================================
+   Buscador de Organismos - CSS 
+   ========================================================== */
+
+/* Contenedor principal del buscador de organismos */
+.buscador-organismos {
+    background-color: #DDD0DF;
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+/* Campo de texto para ciudad/localidad */
+.filtro-input-wrapper {
+    width: 100%;
+}
+
+.filtro-input-wrapper input[type="text"] {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #fff;
+    border: 2px solid #3D3073;
+    border-radius: 40px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-weight: 500;
+}
+
+.filtro-input-wrapper input[type="text"]::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.filtro-input-wrapper input[type="text"]:focus {
+    outline: none;
+    border-color: #3D3073;
+    box-shadow: 0 0 0 3px rgba(61, 48, 115, 0.1);
+}
+
+/* Estilos específicos para radio buttons en ámbito */
+.filtro-dropdown input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Responsive para buscador de organismos */
+@media (max-width: 768px) {
+    .buscador-organismos {
+        padding: 20px;
+    }
+
+    .buscador-organismos .buscador-filtros {
+        flex-direction: column;
+    }
+
+    .buscador-organismos .buscador-botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buscador-organismos .btn-buscar {
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+
+    .buscador-organismos .btn-buscar:hover {
+        transform: scale(1.05);
+    }
+
+    .buscador-organismos .btn-buscar:active {
+        transform: scale(0.98);
+    }
+
+    .buscador-organismos .btn-limpiar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .buscador-organismos {
+        padding: 15px;
+    }
+
+    .filtro-input-wrapper input[type="text"] {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}

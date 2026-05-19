@@ -1,0 +1,186 @@
+/* === SINGLE CATEGORÍA ORGANISMO === */
+.page-categoria-organismo {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px; /* Agregado padding-bottom mayor */
+    font-family: "Inter", sans-serif;
+    margin-bottom: 80px; /* Aumentado margen inferior */
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.categoria-title {
+    font-size: 3.5rem;
+    color: #3D3073;
+    text-align: center;
+    margin-bottom: 25px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categoria-description {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.categoria-description p {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.back-categoria {
+    position: relative;
+    top: 5px; /* separa del header */
+    left: 1vw; /* margen lateral */
+    font-size: 0.95rem !important;
+    text-align: left;
+    z-index: 10;
+}
+
+.back-categoria a {
+    color: #3D3073;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.back-categoria a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de organismos */
+.organismos-section {
+    margin-top: 60px;
+    margin-bottom: 60px; /* Agregado margen inferior */
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 40px; /* Espacio adicional al final */
+    box-sizing: border-box;
+}
+
+.organismos-title {
+    font-size: 2.5rem;
+    color: #3D3073;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sección del buscador */
+.categoria-buscador {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sección de resultados de búsqueda */
+.resultados-busqueda-organismos {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Mensaje cuando no hay organismos */
+.no-recursos-msg {
+    color: #666;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botón cargar más */
+.btn-cargar-mas-organismos {
+    width: 50px;
+    height: 50px;
+    background-color: #3D3073;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto 0;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cargar-mas-organismos:hover {
+    background-color: #DDD0DF;
+    color: #3D3073;
+    transform: scale(1.1);
+}
+
+.btn-cargar-mas-organismos:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-cargar-mas-organismos i {
+    pointer-events: none;
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+    .page-categoria-organismo {
+        padding: 40px 10px 80px 10px;
+    }
+
+    .back-categoria {
+        position: static; /* vuelve al flujo normal */
+        text-align: left;
+        margin-top: 13px;
+        margin-bottom: 10px;
+    }
+
+    .categoria-title {
+        font-size: 2.5rem;
+    }
+
+    .categoria-description {
+        padding: 0 20px;
+    }
+
+    .categoria-description p {
+        font-size: 1.1rem;
+    }
+
+    .organismos-section .organismos-container {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria-title {
+        font-size: 2rem;
+    }
+
+    .categoria-description p {
+        font-size: 1rem;
+    }
+}

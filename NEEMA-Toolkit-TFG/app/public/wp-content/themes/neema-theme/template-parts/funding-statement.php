@@ -1,0 +1,3 @@
+<div class="funding-statement-container">
+    <p class="funding-statement-text"><?php echo neema_translate('NEEMA: Desarrollo de capacidades en la enseñanza superior mediante la elaboración de un plan de estudios sobre resiliencia alimentaria y nutricional adaptado al Pacto Verde Europeo, a la estrategia «de la granja a la mesa» y a las necesidades de África Occidental. NEEMA ha recibido financiación de la Unión Europea en el marco del Grant Agreenment no 101128930. No obstante, las opiniones expresadas en esta comunicación son exclusivamente las del autor o autores y no reflejan necesariamente las de la Unión Europea. Ni la Unión Europea ni la autoridad que concede la subvención pueden ser consideradas responsables de las mismas.'); ?></p>
+</div>

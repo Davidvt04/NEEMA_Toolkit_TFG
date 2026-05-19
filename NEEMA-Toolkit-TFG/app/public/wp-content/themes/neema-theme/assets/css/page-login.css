@@ -1,0 +1,522 @@
+/* === LOGIN & REGISTER PAGES === */
+.login-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../images/fondo-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Overlay semitransparente */
+.login-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+.register-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh; /* asegurar que la página ocupa al menos la ventana */
+    background-image: url('../images/fondo-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: visible; /* permitir que el triángulo del footer se muestre sin recortar */
+    padding: 15% 0 200px; /* espacio base para footer */
+}
+
+/* Si hay errores, aumentar el padding-bottom para que la página crezca y el footer quede abajo */
+.register-page.has-errors {
+    padding-bottom: 750px; /* espacio extra cuando aparecen mensajes de error */
+}
+
+
+.register-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+/* Contenedor principal */
+.login-container {
+    position: relative;
+    z-index: 2;
+    background: #E0D1E4;
+    padding: 40px 90px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: -5%;
+    margin-bottom: 8%;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #3D3073;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Párrafo descriptivo en forgot-password */
+.login-container p {
+    color: #3D3073;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Excepción para el enlace de forgot password */
+.login-container .login-forgot-link,
+.login-container .login-register-link {
+    margin-bottom: 0;
+}
+
+.register-container {
+    position: relative;
+    z-index: 2;
+    background: #E0D1E4;
+    padding: 40px 90px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: -10%;
+    margin-bottom: 8%;
+}
+
+.register-container h2 {
+    margin-bottom: 25px;
+    color: #3D3073;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+
+
+/* Formularios */
+#loginform,
+#registerform,
+#resetform,
+#newpasswordform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loginform label,
+#registerform label,
+#resetform label,
+#newpasswordform label {
+    font-weight: 600;
+    color: #3D3073;
+}
+
+/* Campos de texto y contraseña */
+#loginform input[type="text"],
+#loginform input[type="password"],
+#registerform input[type="text"],
+#registerform input[type="password"],
+#registerform input[type="email"],
+#registerform select,
+#resetform input[type="email"],
+#newpasswordform input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #3D3073;
+    box-sizing: border-box;
+}
+
+/* Asegurar que los inputs dentro de contenedores con toggle de contraseña tengan el padding correcto */
+.input-group input,
+div[style*="position: relative"] input[type="password"],
+div[style*="position: relative"] input[type="text"] {
+    width: 100% !important;
+    padding-right: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Select personalizado */
+#registerform select {
+    appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Botón principal */
+#loginform input[type="submit"],
+#registerform input[type="submit"],
+#resetform input[type="submit"],
+#newpasswordform input[type="submit"] {
+    background-color: #3D3073;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 40%;
+    text-align: center;
+    align-self: center;
+    display: block;
+    margin: 0.75rem auto 0;
+    min-width: 120px;
+    border: 2px solid #3D3073;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+#loginform input[type="submit"]:hover,
+#registerform input[type="submit"]:hover,
+#resetform input[type="submit"]:hover,
+#newpasswordform input[type="submit"]:hover {
+    background-color: #F6EBF8;
+    color: #3D3073;
+    border: 2px solid #3D3073;
+}
+
+/* Enlace login/registro */
+.login-register-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-register-link a {
+    color: #3D3073;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Enlace de recuperar contraseña */
+.login-forgot-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-forgot-link a {
+    color: #3D3073;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-forgot-link a:hover {
+    text-decoration: underline;
+}
+
+/* === Contenedor de campo de contraseña con botón toggle === */
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.password-input {
+    width: 100%;
+    padding: 10px 55px 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    min-height: 44px;
+    -webkit-text-security: disc;
+    box-sizing: border-box;
+    color: #3D3073;
+    font-family: inherit;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #3D3073;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 10px;
+    color: #3D3073;
+    font-size: 1.2rem;
+    min-width: 44px;
+    min-height: 44px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.password-toggle-btn:hover {
+    color: #5A45A0;
+}
+
+/* Mostrar / Ocultar contraseña */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #3D3073;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+
+.toggle-password:hover {
+    color: #4c3a91;
+}
+
+/* Errores */
+.login-error {
+    background-color: #fce4e4;
+    color: #a94442;
+    border: 1px solid #f5c2c2;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Mensajes de éxito */
+.login-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    flex: 1;
+    padding-right: 40px !important;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #3D3073;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+
+.password-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: -10px;
+    margin-bottom: 2px;
+}
+
+/*  Oculta el icono nativo de mostrar/ocultar contraseña en Edge y otros Chromium */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    /* On small screens place the form below the header and allow scrolling
+       instead of forcing it above other elements via z-index. */
+    .login-page {
+        align-items: flex-start;
+        padding-top: 80px; /* reserve space for fixed header */
+        box-sizing: border-box;
+        overflow: auto; /* allow scrolling to the form on short viewports */
+    }
+
+    .login-container {
+        position: relative;
+        z-index: 2;
+        background: #E0D1E4;
+        padding: 20px 45px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-top: 0; /* ensure it starts below the header padding */
+        margin-bottom: 8%;
+    }
+
+    .register-page {
+        min-height: 100vh;
+        padding-bottom: 250px;
+    }
+
+    .register-container {
+        position: relative;
+        z-index: 10;
+        background: #E0D1E4;
+        padding: 20px 45px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 500px;
+        margin-top: 10%;
+        margin-bottom: 200px;
+    }
+
+}
+
+/* === MODAL DE CONFIRMACIÓN DE REGISTRO === */
+#pendingModal.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 999999 !important;
+    animation: fadeInModal 0.3s ease;
+    pointer-events: auto !important;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    position: relative;
+    z-index: 1000000 !important;
+}
+
+.modal-icon {
+    font-size: 60px;
+    color: #3D3073;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    color: #3D3073;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.btn-close-modal {
+    background: #3D3073;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.btn-close-modal:hover {
+    background: #5A45A0;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Height-specific adjustments for very short viewports */
+@media (max-height: 830px) {
+    .login-page {
+        padding-top: 80px;
+    }
+    .login-container {
+        margin-top: 0;
+    }
+}
+
+@media (max-height: 400px) {
+    .login-page {
+        padding-top: 60px;
+    }
+    .login-container {
+        margin-top: 4vh;
+    }
+}
+
+/* Keep the Google reCAPTCHA badge above page overlays and cards. */
+.grecaptcha-badge,
+div.grecaptcha-badge,
+iframe[title="reCAPTCHA"],
+iframe[src*="recaptcha"] {
+    z-index: 2147483647 !important;
+}

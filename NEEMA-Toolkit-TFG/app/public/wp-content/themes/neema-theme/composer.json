@@ -1,0 +1,23 @@
+{
+  "name": "neema-theme/neema-theme",
+  "description": "Base de pruebas para el tema WordPress Neema.",
+  "type": "wordpress-theme",
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6",
+    "brain/monkey": "^2.6",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NeemaTheme\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test:unit": "phpunit --testsuite Unit"
+  }
+}

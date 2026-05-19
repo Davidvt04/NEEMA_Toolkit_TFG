@@ -1,0 +1,180 @@
+/* Contenedor principal de recursos */
+.recursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Tarjeta recurso */
+.recurso-preview {
+  background-color: #B691BE; /* Rosa NEEMA */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; 
+  aspect-ratio: 1 / 1; /* Forzar proporción cuadrada */
+  box-sizing: border-box;
+  position: relative; /* Para posicionar el bookmark */
+}
+
+.recurso-preview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Link que rodea la tarjeta */
+.recurso-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+/* Imagen del recurso - altura fija arriba */
+.recurso-thumb {
+  width: 100%;
+  height: 50%; /* mitad superior */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.recurso-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rectángulo azul de ancho completo */
+.recurso-blue-box {
+  width: 100%;
+  height: 20%; /* fijo y uniforme */
+  background-color: #3D3073;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 0.9rem;
+  line-height: 1;
+  position: relative;
+}
+
+.recurso-blue-box > img,
+.recurso-blue-box > picture {
+  position: absolute;
+  left: 12px;
+  max-height: 80%;
+  width: auto;
+  object-fit: contain;
+  margin-left: 4px;
+}
+
+.recurso-languages {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.recurso-language {
+  background-color: #F6EBF8;
+  color: #3D3073;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+/* Icono de bookmark a la derecha del marco azul en blanco */
+.recurso-preview .fa-bookmark-o {
+  position: absolute;
+  right: 20px;
+  top: 58%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-size: 1.9rem;
+  line-height: 1;
+  z-index: 10;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  font-family: FontAwesome;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.recurso-preview .fa-bookmark-o::before {
+  content: "\f097";
+}
+
+.recurso-preview .fa-bookmark-o:hover {
+  transform: translateY(-50%) scale(1.15);
+  color: #F6EBF8;
+}
+
+/* Icono de bookmark relleno (favorito guardado) */
+.recurso-preview .fa-bookmark {
+  position: absolute;
+  right: 20px;
+  top: 58%;
+  transform: translateY(-50%);
+  color: #B691BE;
+  font-size: 1.9rem;
+  line-height: 1;
+  z-index: 10;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  font-family: FontAwesome;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  -webkit-text-stroke: 2px #ffffff;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
+
+.recurso-preview .fa-bookmark::before {
+  content: "\f02e";
+}
+
+.recurso-preview .fa-bookmark:hover {
+  transform: translateY(-50%) scale(1.15);
+  color: #F6EBF8;
+}
+
+/* Título centrado en su espacio */
+.recurso-preview-title {
+  color: black;
+  font-size: 1.0rem;
+  text-align: center;
+  display: flex;
+  align-items: center;  /* centrado vertical */
+  justify-content: center; /* centrado horizontal */
+  height: 30%; /* ocupa el espacio restante */
+  padding: 0 8px;
+  line-height: 1.2;
+}
+
+/* Responsivo */
+@media screen and (max-width: 900px) {
+  .recurso-preview {
+    width: 100%; /* 1 por fila en tablet/móvil */
+  }
+}

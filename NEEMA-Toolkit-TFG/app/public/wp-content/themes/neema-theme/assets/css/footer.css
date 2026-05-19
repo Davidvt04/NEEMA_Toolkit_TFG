@@ -1,0 +1,149 @@
+/*  Footer CSS File */
+
+.site-footer {
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Triángulo superior */
+.footer-triangle {
+  position: absolute;  /* lo sacamos del flujo para que flote sobre el rectángulo */
+  top: -150px;         /* sube el triángulo hacia arriba sobre el footer */
+  left: 0;
+  width: 50%;
+  height: 0;
+  border-left: 0vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 150px solid #DDD0DF; 
+  z-index: 5;          /* asegúrate que esté por debajo de la imagen */
+  clip-path: polygon(
+    0% 100%,   /* esquina inferior izquierda → ángulo recto */
+    0% 0%,     /* esquina superior izquierda */
+    50% 100%  /* esquina inferior derecha */
+  );
+
+
+  
+}
+
+.footer-triangle-image {
+  position: absolute;
+  top: -80px;         
+  left: 34%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.footer-triangle-image img {
+  width: clamp(100px, 40%, 290px);
+  height: auto;
+  display: block;
+}
+
+
+
+
+
+/* Rectángulo del footer */
+.footer-content {
+  background-color: #3D3073;
+  color: #eee;
+  height: 100px;
+  display: flex;
+  justify-content: space-between; /* separa los elementos a los extremos */
+  align-items: center; /* centra verticalmente */
+  padding: 0 24px; /* algo de separación del borde derecho */
+}
+
+.footer-copyright {
+  color: #fff;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.footer-credit {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  margin-top: 3px;
+}
+
+.footer-credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-credit a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  text-align: left;
+  display: flex;
+  gap: 15px;          /* espacio entre iconos */
+  margin-left: 5px;  /* separación del texto */
+  align-items: center;
+}
+
+.footer-social a {
+  color: #ccc;         /* color normal */
+  font-size: 1.2rem;   /* tamaño de icono */
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;         /* color al pasar el ratón */
+}
+
+.footer-email {
+  color: #ccc;           /* color del texto */
+  text-decoration: underline; /* subrayado */
+  transition: color 0.3s;
+}
+
+.footer-email:hover {
+  color: #fff;           /* cambia color al pasar el ratón */
+}
+
+.footer-hero {
+  position: relative;
+  height: 0px; 
+  background-color: transparent;
+  z-index: 20;
+  overflow: visible;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-triangle {
+    top: -100px;
+    border-bottom-width: 100px;
+  }
+
+  .footer-triangle-image {
+    margin-top: 30px;
+  }
+
+  .footer-email {
+    display: none;
+  }
+
+  .footer-copyright {
+    font-size: 0.7rem;
+  }
+
+  .footer-credit {
+    font-size: 0.65rem;
+  }
+
+}
+
+

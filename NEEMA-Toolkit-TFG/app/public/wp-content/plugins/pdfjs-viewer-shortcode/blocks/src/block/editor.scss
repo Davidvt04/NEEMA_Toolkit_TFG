@@ -1,0 +1,21 @@
+.pdfjs-header {
+	background-color: #fbfbfe;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+.pdfjs-button {
+	background-color: rgb( 233, 242, 251 );
+	border: 1px solid transparent;
+}
+
+.pdfjs-button:hover,
+.pdfjs-button:focus {
+	background-color: rgb( 233, 242, 251 );
+	border: 1px solid #007cba;
+}
+
+.pdfjs-preview-link {
+	text-decoration: underline;
+}

@@ -1,0 +1,343 @@
+/* ==========================================================
+   Página Servicios de Apoyo - CSS 
+   ========================================================== */
+
+/* Contenedor principal */
+.page-servicios-apoyo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra horizontalmente */
+    text-align: center;  /* centra el texto dentro de las secciones */
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #000; /* texto negro */
+    font-weight: 500; /* ligeramente más grueso para todo el texto */
+}
+
+/* Secciones */
+.page-servicios-apoyo section {
+  margin-bottom: 60px;
+}
+
+.page-servicios-apoyo .servicios-intro {
+  margin-bottom: 2px;
+}
+
+/* Títulos */
+.page-servicios-apoyo h1,
+.page-servicios-apoyo h2 {
+    color: #3D3073; /* azul NEEMA */
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-weight: 700; /* títulos en negrita */
+}
+
+.page-servicios-apoyo h1 {
+    font-size: 3rem; /* más grande que antes */
+}
+
+.page-servicios-apoyo h2 {
+    font-size: 2.5rem; /* más grande que antes */
+}
+
+/* Párrafos */
+.page-servicios-apoyo p {
+    font-size: 1.2rem; /* más grande que antes */
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    color: #000; /* negro */
+    font-weight: 500; /* un poco más grueso que normal */
+}
+
+/* Mensaje cuando no hay organismos */
+.no-recursos-msg {
+    color: #666 !important;
+    font-style: italic;
+    font-size: 1.2rem !important;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .page-servicios-apoyo h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-servicios-apoyo h2 {
+        font-size: 2rem;
+    }
+
+    .page-servicios-apoyo p {
+        font-size: 1.1rem;
+    }
+
+    .page-servicios-apoyo .lista-container {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-servicios-apoyo h1 {
+        font-size: 2rem;
+    }
+
+    .page-servicios-apoyo h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-servicios-apoyo p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-servicios-apoyo h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-servicios-apoyo h2 {
+        font-size: 1.2rem;
+    }
+
+    .page-servicios-apoyo p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/* Servicios de apoyo */
+/* Contenedor principal */
+.page-servicios-apoyo .lista-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+/* Contenedor de todos los servicios */
+.servicios-container {
+  display: flex;
+  flex-direction: column; /* uno debajo de otro */
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  margin-left: 0;
+}
+
+/* Cada servicio */
+.servicio {
+  background-color: #DDD0DF;  /* rosa base del proyecto */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  /*  Forma paralelogramo */
+  transform: skew(-20deg);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 60px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+  background-color: #F6EBF8;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.15);
+  transform: skew(-20deg) translateX(20px); /* se mueve a la derecha */
+}
+
+/*  Enderezar contenido */
+.servicio > * {
+  transform: skew(20deg);
+}
+
+/*  Imagen */
+.servicio-thumb img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*  Título */
+.servicio-title {
+  color: #14064D;
+  font-weight: 750;
+  font-size: 2.2rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* ==================================== */
+/* Responsive Servicios */
+/* ==================================== */
+
+/* Tablets (768px a 1023px) */
+@media (max-width: 1023px) {
+  .servicio {
+    transform: skew(-15deg);
+    padding: 15px 25px;
+  }
+
+  .servicio > * {
+    transform: skew(15deg);
+  }
+
+  .servicio-thumb img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .servicio-title {
+    font-size: 1.8rem;
+    font-weight: 750;
+  }
+}
+
+/* Móviles (menos de 768px) */
+@media (max-width: 767px) {
+  .servicios-container {
+    padding: 10px;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .servicio {
+    flex-direction: column;
+    align-items: center;
+    transform: skew(0); 
+    padding: 15px;
+  }
+
+  .servicio > * {
+    transform: skew(0); 
+    text-align: center;
+  }
+
+  .servicio-thumb img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .servicio-title {
+    font-size: 1.6rem;
+    font-weight: 750;
+  }
+
+  .servicio:hover {
+    transform: translateX(0); /* eliminar movimiento en móviles */
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Asegurar centrado de servicios en pantallas pequeñas */
+  .page-servicios-apoyo .lista-container,
+  .servicios-container {
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .servicios-container > .servicio {
+    width: 100%;
+    max-width: 640px; /* límite máximo */
+    margin: 0 auto;   /* centra el servicio */
+    padding-left: 18px;
+    padding-right: 18px;
+    box-sizing: border-box;
+    transform: none; /* aseguramos que no quede skew accidental */
+  }
+
+  /* proteger contra elementos internos con ancho fijo */
+  .servicios-container .servicio * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  html, body, .page-servicios-apoyo {
+    overflow-x: hidden;
+  }
+
+  /* Forzar footer en el flujo normal en móvil (evita que aparezca fijo arriba) */
+  footer,
+  .site-footer,
+  #colophon {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+  }
+}
+
+.servicio-link {
+    text-decoration: none; /* quita subrayado */
+    color: inherit;         /* mantiene el color del contenido */
+    display: block;         /* hace que todo el bloque sea clicable */
+}
+
+/* Sección del buscador */
+.servicios-buscador {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* Sección de resultados de búsqueda */
+.resultados-busqueda-organismos {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.resultados-busqueda-organismos .organismos-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Resetear estilos heredados de .page-servicios-apoyo para los organismos */
+.resultados-busqueda-organismos .organismo-preview {
+    text-align: left; /* Los organismos deben estar alineados a la izquierda */
+}
+
+.resultados-busqueda-organismos .organismo-preview p {
+    font-size: 0.95rem; /* Tamaño original del organismo-preview */
+    line-height: 1.5;
+    max-width: none;
+    margin: 0 0 8px 0;
+}
+
+.resultados-busqueda-organismos .organismo-preview h3,
+.resultados-busqueda-organismos .organismo-preview h4 {
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Responsive para organismos */
+@media (max-width: 768px) {
+    .resultados-busqueda-organismos .organismos-container {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}

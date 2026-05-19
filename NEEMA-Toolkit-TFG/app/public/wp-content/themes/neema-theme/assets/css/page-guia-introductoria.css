@@ -1,0 +1,179 @@
+.guia-introductoria {
+    font-family: "Inter", sans-serif;
+}
+
+.guia-title {
+    text-align: center;
+    color: #3D3073;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+.guia-intro-text {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+}
+
+.guia-file {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 10px solid #FCEFFF;
+    border-right: 30px solid #FCEFFF;
+    border-bottom: 30px solid #FCEFFF;
+    border-left: 30px solid #FCEFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #FCEFFF;
+    border-right: 15px solid #FCEFFF;
+    border-bottom: 15px solid #FCEFFF;
+    border-left: 15px solid #FCEFFF;
+}
+
+/* Selector de idioma para archivos */
+.guia-file-lang-selector {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background-color: #FCEFFF;
+    float: left;
+}
+
+.lang-archivo-btn {
+    background-color: #F6EBF8;
+    color: #3D3073;
+    border: 2px solid #3D3073;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-archivo-btn:hover {
+    background-color: #3D3073;
+    color: #F6EBF8;
+}
+
+.lang-archivo-btn.active {
+    background-color: #3D3073;
+    color: #F6EBF8;
+}
+
+.archivo-container {
+    width: 100%;
+}
+
+.guia-file-download {
+    text-align: right;
+    background-color: #FCEFFF;
+    padding: 10px;
+    overflow: auto;
+}
+
+.btn-descargar {
+    display: inline-block;
+    background: #3D3073;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    margin-bottom: 4px;
+    border: 2px solid #3D3073;
+}
+
+.btn-descargar:hover {
+    background: #F6EBF8;
+    color: #3D3073;
+    border: 2px solid #3D3073;
+}
+
+.guia-file-viewer {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos para el reproductor de YouTube */
+.guia-video {
+    width: 100%;
+    max-width: 1120px;
+    margin: 18px auto;
+    padding: 0 16px;
+}
+.guia-video-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.guia-video-inner iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* Mensaje destacado cuando no existe ninguna guía publicada */
+.guia-no-archivos--missing {
+    background: #fff5f5; /* rojo muy claro */
+    border: 1px solid #f2c2c2;
+    color: #8b0000;
+    padding: 24px 28px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 24px auto;
+    box-shadow: 0 6px 18px rgba(139,0,0,0.06);
+    font-weight: 600;
+    text-align: center;
+}
+
+.guia-no-archivos--missing p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .guia-title {
+        font-size: 1.8rem;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .guia-file {
+        border-right: 15px solid #FCEFFF;
+        border-bottom: 15px solid #FCEFFF;
+        border-left: 15px solid #FCEFFF;
+        margin-bottom: 20%;
+    }
+
+    .guia-file-viewer {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .guia-file-viewer iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 500px !important;
+    }
+}

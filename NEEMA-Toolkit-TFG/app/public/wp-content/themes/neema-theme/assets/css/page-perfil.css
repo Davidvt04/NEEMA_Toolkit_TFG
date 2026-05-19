@@ -1,0 +1,591 @@
+/* === PÁGINA DE PERFIL === */
+.profile-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-image: url('../images/fondo-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: visible;
+    padding: 8% 20px 100px;
+}
+
+/* Si hay errores o mensajes de éxito, aumentar el padding-bottom */
+.profile-page.has-errors {
+    padding-bottom: 300px;
+}
+
+/* Overlay semitransparente */
+.profile-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+/* Contenedor del perfil */
+.profile-container {
+    position: relative;
+    z-index: 2;
+    background: #E0D1E4;
+    padding: 40px 90px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.profile-container h2 {
+    margin-bottom: 25px;
+    color: #3D3073;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Formulario de perfil */
+#profileform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#profileform label {
+    font-weight: 600;
+    color: #3D3073;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+#profileform input[type="text"],
+#profileform input[type="email"],
+#profileform select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #3D3073;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#profileform input[type="text"]:focus,
+#profileform input[type="email"]:focus,
+#profileform select:focus {
+    outline: none;
+    border-color: #3D3073;
+    box-shadow: 0 0 0 3px rgba(61, 48, 115, 0.1);
+}
+
+/* Select personalizado */
+#profileform select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233D3073' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+/* Información de cambio de contraseña */
+.password-change-info {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3D3073;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.password-change-info p {
+    margin: 0;
+    color: #3D3073;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.password-change-info a {
+    color: #3D3073;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.password-change-info a:hover {
+    color: #5A45A0;
+}
+
+/* Contenedor de botones */
+.profile-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Botón de actualizar perfil */
+.btn-update-profile {
+    background-color: #3D3073;
+    color: white;
+    border: 2px solid #3D3073;
+    padding: 12px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    flex: 1;
+    min-width: 180px;
+}
+
+.btn-update-profile:hover {
+    background-color: #F6EBF8;
+    color: #3D3073;
+    transform: translateY(-2px);
+}
+
+.btn-update-profile:active {
+    transform: translateY(0);
+}
+
+/* Botón de eliminar cuenta */
+.btn-delete-account {
+    background-color: transparent;
+    color: #d63638;
+    border: 2px solid #d63638;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    flex: 0;
+    min-width: 150px;
+}
+
+.btn-delete-account:hover {
+    background-color: #d63638;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-delete-account:active {
+    transform: translateY(0);
+}
+
+/* Mensajes de error y éxito */
+.login-error {
+    background-color: #fce4e4;
+    color: #a94442;
+    border: 1px solid #f5c2c2;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.login-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enlace de volver */
+.login-register-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.login-register-link a {
+    color: #3D3073;
+    font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.login-register-link a:hover {
+    text-decoration: underline;
+}
+
+/* === MODAL DE ELIMINACIÓN === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-delete {
+    border-top: 5px solid #d63638;
+}
+
+.modal-info {
+    border-top: 5px solid #3D3073;
+}
+
+/* Icono del modal */
+.modal-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background-color: #f0f0f0;
+    color: #3D3073;
+}
+
+.modal-icon-danger {
+    background-color: #fce4e4;
+    color: #d63638;
+}
+
+.modal-icon-info {
+    background-color: #E0D1E4;
+    color: #3D3073;
+}
+
+.modal-content h3 {
+    color: #3D3073;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Formulario dentro del modal */
+#deleteForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#deleteForm label {
+    color: #3D3073;
+    font-weight: 600;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#deleteForm input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #3D3073;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#deleteForm input[type="text"]:focus {
+    outline: none;
+    border-color: #d63638;
+}
+
+/* Botones del modal */
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-cancel {
+    flex: 1;
+    background-color: #6c757d;
+    color: white;
+    border: 2px solid #6c757d;
+    padding: 12px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 120px;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-confirm-delete {
+    flex: 1;
+    background-color: #d63638;
+    color: white;
+    border: 2px solid #d63638;
+    padding: 12px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 120px;
+}
+
+.btn-confirm-delete:hover {
+    background-color: #b32d2e;
+    transform: translateY(-2px);
+}
+
+/* Botón de cerrar modal de información */
+.btn-close-modal {
+    width: 100%;
+    background-color: #3D3073;
+    color: white;
+    border: 2px solid #3D3073;
+    padding: 12px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-close-modal:hover {
+    background-color: #5A45A0;
+    transform: translateY(-2px);
+}
+
+.btn-close-modal:active {
+    transform: translateY(0);
+}
+
+.btn-cancel:active,
+.btn-confirm-delete:active {
+    transform: translateY(0);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 15% 15px 150px;
+    }
+
+    .profile-container {
+        padding: 30px 40px;
+        max-width: 100%;
+    }
+
+    .profile-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-buttons {
+        flex-direction: column;
+    }
+
+    .btn-update-profile,
+    .btn-delete-account {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .modal-content {
+        padding: 30px 25px;
+        max-width: 90%;
+    }
+
+    .modal-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .modal-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .btn-cancel,
+    .btn-confirm-delete {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 20% 10px 120px;
+    }
+
+    .profile-container {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .profile-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    #profileform {
+        gap: 12px;
+    }
+
+    #profileform label {
+        font-size: 0.9rem;
+    }
+
+    #profileform input[type="text"],
+    #profileform input[type="email"],
+    #profileform select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .password-change-info {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .password-change-info p {
+        font-size: 0.85rem;
+    }
+
+    .btn-update-profile,
+    .btn-delete-account {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .modal-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    #deleteForm label {
+        font-size: 0.85rem;
+    }
+
+    #deleteForm input[type="text"] {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .btn-cancel,
+    .btn-confirm-delete {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .login-register-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra pequeño (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .profile-container {
+        padding: 20px 15px;
+    }
+
+    .profile-container h2 {
+        font-size: 1.2rem;
+    }
+
+    #profileform input[type="text"],
+    #profileform input[type="email"],
+    #profileform select {
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 20px 15px;
+    }
+}

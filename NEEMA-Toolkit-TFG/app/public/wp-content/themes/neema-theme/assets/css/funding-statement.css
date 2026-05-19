@@ -1,0 +1,31 @@
+/* Generic funding statement block: white rounded box with slight vertical margin */
+.funding-statement-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0 24px 0;
+    margin-bottom: 10%;
+    padding: 0 5%;
+    z-index: 999;
+    
+}
+
+.funding-statement-text {
+    background: #ffffff;
+    color: #111111;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    max-width: 1200px;
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .funding-statement-container { padding: 0 6%; margin: 12px 0 12px 0; margin-bottom: 20%; }
+    .funding-statement-text { padding: 10px 12px; font-size: 0.95rem; }
+}

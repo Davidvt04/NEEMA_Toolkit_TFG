@@ -1,0 +1,93 @@
+# Translation of Plugins - PDF.js Viewer - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - PDF.js Viewer - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-09 19:53:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - PDF.js Viewer - Stable (latest release)\n"
+
+#: inc/media-button.php:14
+msgid "Add PDF"
+msgstr "Añadir PDF"
+
+#: inc/options-page.php:206
+msgid "Settings"
+msgstr "Ajustes"
+
+#: inc/options-page.php:185
+msgid "These options are not customizable per page/post at this time. Only globally."
+msgstr "Estas opciones no son personalizables por página/entrada de momento. Sólo globalmente."
+
+#: inc/options-page.php:182
+msgid "When editing existing content, it may cause existing blocks to have \"unexpected or invalid content\" upon editing. Don't worry, just click the three little dots, choose \"Attempt Block Recovery\", and everything should be working again. This \"unexpected or invalid content\" will not affect live content, just content in the editor."
+msgstr "Al editar el contenido existente, puede hacer que los bloques existentes tengan «contenido inesperado o no válido» al editarlos. No te preocupes, simplemente haz clic en los tres puntitos, elige «Intentar recuperar el bloque» y todo debería volver a funcionar. Este «contenido inesperado o no válido» no afectará al contenido en vivo, sólo al contenido en el editor."
+
+#: inc/options-page.php:165
+msgid "Page Mode (aka Sidebar)"
+msgstr "Modo página (barra lateral)"
+
+#: inc/options-page.php:160
+msgid "Note: 0 = 100%"
+msgstr "Nota: 0 = 100%"
+
+#: inc/options-page.php:157 blocks/dist/blocks.build.js:179
+#: blocks/src/block/block.js:232
+msgid "Embed Width"
+msgstr "Ancho de la incrustación"
+
+#: inc/options-page.php:153 blocks/dist/blocks.build.js:169
+#: blocks/src/block/block.js:218
+msgid "Embed Height"
+msgstr "Altura de la incrustación"
+
+#: inc/options-page.php:149
+msgid "Fullscreen Links in New Tabs"
+msgstr "Enlaces a pantalla completa en las nuevas pestañas"
+
+#: inc/options-page.php:145
+msgid "Fullscreen Link Text"
+msgstr "Texto de enlace en pantalla completa"
+
+#: inc/options-page.php:141
+msgid "Show Fullscreen Link"
+msgstr "Mostrar enlace de pantalla completa"
+
+#: inc/options-page.php:133
+msgid "Show Search Button"
+msgstr "Mostrar botón de búsqueda"
+
+#: inc/options-page.php:129
+msgid "Show Print Button"
+msgstr "Mostrar botón para imprimir"
+
+#: inc/options-page.php:121
+msgid "Most defaults only affect new posts and existing posts when you edit them. Not all options work with the shortcode."
+msgstr "La mayoría de las opciones predeterminadas sólo afectan a las nuevas entradas y a las existentes cuando las editas. No todas las opciones funcionan con el shortcode."
+
+#: inc/options-page.php:119
+msgid "Defaults"
+msgstr "Valores predeterminados"
+
+#: inc/options-page.php:99
+msgid "PDFjs Viewer Options"
+msgstr "Opciones del visor PDFjs"
+
+#. Author of the plugin
+#: pdfjs-viewer.php
+msgid "<a href=\"http://byterevel.com/\">Ben Lawson</a>, <a href=\"https://www.twistermc.com/\">Thomas McMahon</a>"
+msgstr "<a href=\"http://byterevel.com/\">Ben Lawson</a>, <a href=\"https://www.twistermc.com/\">Thomas McMahon</a>"
+
+#. Description of the plugin
+#: pdfjs-viewer.php
+msgid "Embed PDFs with the gorgeous PDF.js viewer"
+msgstr "Incrustación de PDF con el magnífico visor PDF.js"
+
+#. Plugin URI of the plugin
+#: pdfjs-viewer.php
+msgid "http://byterevel.com/"
+msgstr "http://byterevel.com/"

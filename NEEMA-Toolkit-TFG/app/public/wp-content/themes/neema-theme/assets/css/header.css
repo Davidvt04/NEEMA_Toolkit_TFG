@@ -1,0 +1,302 @@
+/* Header CSS File */
+
+.site-header {
+  background-color: #F6EBF8; /* rectángulo del header */
+  color: #3D3073;
+  padding: 10px 24px;
+  position: relative;
+  z-index: 100;
+}
+
+/* --- DISTRIBUCIÓN GENERAL (ESCRITORIO) --- */
+.header-top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  min-width: 200px; /* Espacio mínimo para el logo */
+}
+
+.header-logo img {
+  height: 90px;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  text-align: center;
+  z-index: 1;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header-button {
+  margin-left: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.header-button .btn-login {
+  white-space: nowrap;
+  background-color: #3D3073;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 45px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #3D3073;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.btn-login i.fa-sort-desc {
+    font-size: 1.3em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2em;
+    height: 1.2em;
+    line-height: 1;
+    flex: 0 0 1.2em;
+    transform-origin: center center;
+}
+
+.header-button .btn-login:hover {
+  background-color: #F6EBF8;
+  color: #3D3073;
+  border: 2px solid #3D3073;
+}
+
+/* Menú debajo de la fila superior */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-menu {
+  display: inline-block;
+  background-color: #B691BE;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 45px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  border: 2px solid #F6EBF8;
+}
+
+.btn-menu:hover {
+  background-color: #F6EBF8;
+  transform: translateY(-2px);
+  border: 2px solid #B691BE;
+  color: #B691BE;
+}
+
+/* --- TRIÁNGULOS --- */
+.header-hero {
+  position: relative;
+  height: 0px; 
+  background-color: transparent;
+  z-index: 20;
+  overflow: visible;
+}
+
+.header-triangle1 {
+  position: relative;
+  width: 100%;          
+  height: 150px;        
+  background-color: #F6EBF8;
+  margin-top: -1px;
+  z-index: 5; /* Triángulo rosa en nivel medio */
+  clip-path: polygon(0 0, 100% 30%, 100% 0);
+}
+
+.header-triangle2 {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #3D3073;
+  margin-top: -150px;
+  z-index: 1; /* Triángulo azul en nivel más bajo */
+  clip-path: polygon(0 0, 0 80px, 90% 0);
+}
+
+/* --- OTROS --- */
+body {
+  background-color: transparent;
+}
+
+.site-main {
+  position: relative;
+  z-index: 10;
+  margin-top: -50px;
+  background-color: white;
+  padding-top: 100px;
+}
+
+/* --- Selector de idioma --- */
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border: 2px solid #F6EBF8; 
+  background-color: #F6EBF8;
+  color: #3D3073;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-top: 1%;
+  margin-left: 1%;
+  position: relative;
+}
+
+.lang-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.lang-btn.active {
+  background-color: #B691BE;
+  color: #F6EBF8;
+  border: 2px solid #F6EBF8; 
+}
+
+.imagen-fullwidth img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- NUEVO: estructura para móvil --- */
+.header-left {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-button-mobile {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+
+  /* Reorganizamos el header */
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    position: static;
+  }
+
+  /* Fila superior (logo + login móvil) */
+  .header-left {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    min-width: auto;
+  }
+
+  .header-logo img {
+    height: 80px;
+  }
+
+  .header-title {
+    position: static;
+    transform: none;
+    width: auto;
+    z-index: auto;
+  }
+
+  .header-title h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-button {
+    margin-left: 0;
+    z-index: auto;
+    position: static;
+  }
+
+  /* Mostrar login móvil */
+  .header-button-mobile {
+    display: block;
+  }
+
+  /* Ocultar login escritorio */
+  .desktop-only {
+    display: none;
+  }
+
+  .header-button-mobile .btn-login {
+    white-space: nowrap;
+    background-color: #3D3073;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 45px;
+    font-weight: bold;
+    border: 2px solid #3D3073;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.95rem;
+  }
+
+  .header-button-mobile .btn-login:hover {
+    background-color: #F6EBF8;
+    color: #3D3073;
+  }
+
+  .lang-switcher {
+    position: relative;
+  }
+
+  .lang-btn {
+    position: relative;
+    margin-top: 6%;
+    
+  }
+
+  .header-triangle2 {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #3D3073;
+  margin-top: -150px;
+  z-index: 1;
+  clip-path: polygon(0 0, 0 85px, 120% 30px);
+}
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
