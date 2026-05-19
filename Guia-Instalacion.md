@@ -75,10 +75,10 @@ El proyecto incluye una suite de tests automatizados para validar la funcionalid
 Para ejecutar los tests, necesita tener instalado:
 
 - **PHP 8.2.27** (incluido en LocalWP)
-- **Composer** - Gestor de dependencias de PHP ([Descargar Composer](https://getcomposer.org/))
-- Las dependencias de desarrollo del proyecto
+- **Composer** - Gestor de dependencias de PHP (incluido en LocalWP)
 
 ### Instalación de Dependencias de Desarrollo
+Para ejecutar la suite de test, se recomienda acceder a través de LocalWP a la **Site Shell**, desde donde se pueden ejecutar el resto de comandos a continuación:
 
 Los tests requieren dependencias especiales que se instalan solo en modo desarrollo. Para instalarlas, ejecute:
 
@@ -101,8 +101,6 @@ cd wp-content/themes/neema-theme
 # Ejecutar todos los tests
 composer test
 
-# Ejecutar solo los tests unitarios
-composer test:unit
 ```
 
 
